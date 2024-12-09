@@ -216,7 +216,6 @@ object FirstSteps:
   end Exercise18
 
   object Exercise19:
-    import java.io.IOException
     def readUntil(acceptInput: String => Boolean): ZIO[Any, IOException, String] =
       Console.readLine.flatMap: response =>
         if acceptInput(response) then ZIO.succeed(response) else readUntil(acceptInput)
